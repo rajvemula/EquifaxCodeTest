@@ -2,6 +2,9 @@ package com.amazon.scripts;
 
 import com.amazon.libs.ActionEngine;
 import com.amazon.pageobjects.HomePage;
+import com.amazon.pageobjects.AddToCartPage;
+import com.amazon.pageobjects.SearchPpage;
+import com.amazon.pageobjects.CheckoutPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,11 +15,11 @@ public class Web_E2EScenario extends ActionEngine {
         driver.get(prop.getUrl());
         sendValue(HomePage.searchBar,"qa testing for beginners");
         clickELE(HomePage.searchIcon);
-        clickELE(HomePage.firstItem);
+        clickELE(SearchPage.firstItem);
         Assert.assertEquals("$29.00",getElementText(HomePage.price));
-        String price = getElementText(HomePage.price);
-        clickELE(HomePage.btnAddtoCart);
-        Assert.assertEquals(price,getElementText(HomePage.checkOutPrice));
-        clickELE(HomePage.proceedToCheckout);
+        String price = getElementText(AddToCartPage.price);
+        clickELE(AddToCartPage.btnAddtoCart);
+        Assert.assertEquals(price,getElementText(CheckoutPage.checkOutPrice));
+        clickELE(CheckoutPage.proceedToCheckout);
     }
 }
