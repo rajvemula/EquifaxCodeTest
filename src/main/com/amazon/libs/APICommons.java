@@ -18,6 +18,26 @@ public class APICommons extends ActionEngine{
         RestAssured.baseURI = prop.getBaseURI();
     }
 
+    /*
+     * This method verify the GET-Emp Status code
+     * Response value "staus"
+     * Resource passed from properties file
+     */
+
+    public void verifyEmp_GET(){
+        statusCodeValidation(200,prop.getEmp());
+        respValueValidation("status","status",prop.getEmp());
+    }
+    /*
+     * This method verify theDELETE-Emp Status code
+     * Response value message
+     * Resource passed from properties file
+     */
+    public void verifyEmp_DELETE(){
+        statusCodeValidation(200,prop.deleteEmp());
+        deleteEmp(prop.deleteEmp());
+    }
+
     //Status code validation
     public void statusCodeValidation (int expStatusCode,String resource) {
         httpRequest = RestAssured.given();

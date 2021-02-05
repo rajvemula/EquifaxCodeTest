@@ -9,6 +9,9 @@ public class PropertyFileReader {
     private String url;
     private String baseURI;
     private String configFilePath;
+    private String searchTerm;
+    private String getEmp;
+    private String deleteEmp;
 
     public PropertyFileReader() {
         Properties prop = new Properties();
@@ -21,6 +24,9 @@ public class PropertyFileReader {
 
             this.url = prop.getProperty("base_url");
             this.baseURI = prop.getProperty("base_uri");
+            this.searchTerm = prop.getProperty("search_term");
+            this.getEmp = prop.getProperty("get_emp");
+            this.deleteEmp = prop.getProperty("delete_emp");
 
         } catch (IOException ex) {
             ex.printStackTrace();
@@ -39,6 +45,13 @@ public class PropertyFileReader {
 
     public String getBaseURI() {
         return baseURI;
+    }
+    public String getSearchTerm() { return searchTerm; }
+    public String getEmp() {
+        return getEmp;
+    }
+    public String deleteEmp() {
+        return deleteEmp;
     }
 
 

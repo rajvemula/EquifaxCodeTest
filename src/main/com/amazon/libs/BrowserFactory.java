@@ -10,23 +10,23 @@ import java.util.concurrent.TimeUnit;
 
 public class BrowserFactory extends PropertyFileReader{
 
-    public WebDriver driver;
+    public static WebDriver driver;
     public PropertyFileReader prop = new PropertyFileReader();
 
     @BeforeTest
-    public WebDriver startBrowser() throws IOException {
-
+    public void startBrowser() throws IOException {
         System.setProperty("webdriver.chrome.driver", "src\\test\\browser-drivers\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get(prop.getUrl().toString());
 		    driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        return driver;
     }
 
     @AfterTest
     public void closeBrowser() throws IOException {
-        driver.close();
+        if(driver != null) {
+            driver.close();
+        }
     }
 
 }

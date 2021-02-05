@@ -11,14 +11,12 @@ public class API_Employee extends APICommons {
 
     @Test
     public void getEmpValidation(){
-        statusCodeValidation(200,"/api/v1/employee/10");
-        respValueValidation("status","status","/api/v1/employee/10");
+        verifyEmp_GET();
     }
 
     @Test
     public void deleteEmpValidation(){
-        statusCodeValidation(200,"/api/v1/delete/2");
-        respValueValidation("status","status","/api/v1/delete/2");
+        verifyEmp_DELETE();
     }
 
 }
