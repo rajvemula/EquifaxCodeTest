@@ -4,7 +4,7 @@ import com.amazon.libs.ActionEngine;
 import org.openqa.selenium.By;
 
 public class ProductListPage extends ActionEngine {
-    //ProdcutListPage - Elements
+    //ProductListPage - Elements
     public static By firstItem = By.xpath("//*[@id='search']/div[1]/div[2]/div/span[3]/div[2]/div[1]/div/span/div/div/div[2]/div[1]/div/div/span/a/div/img");
 
     /*

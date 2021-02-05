@@ -20,7 +20,7 @@ public class APICommons extends ActionEngine{
 
     /*
      * This method verify the GET-Emp Status code
-     * Response value "staus"
+     * Response value "status"
      * Resource passed from properties file
      */
 
@@ -29,7 +29,7 @@ public class APICommons extends ActionEngine{
         respValueValidation("status","status",prop.getEmp());
     }
     /*
-     * This method verify theDELETE-Emp Status code
+     * This method verify the DELETE-Emp Status code
      * Response value message
      * Resource passed from properties file
      */
